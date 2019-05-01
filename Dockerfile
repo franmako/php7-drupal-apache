@@ -38,8 +38,6 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 COPY vhost.conf /etc/apache2/sites-available/
 RUN ln -s /etc/apache2/sites-available/vhost.conf /etc/apache2/sites-enabled/vhost.conf
 
-#see https://serverfault.com/questions/772227/chmod-not-working-correctly-in-docker
-COPY . /src
 RUN chown -R www-data:www-data /var/www/html/ 
 
 WORKDIR /var/www/html
