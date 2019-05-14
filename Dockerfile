@@ -58,8 +58,8 @@ ADD https://github.com/drush-ops/drush-launcher/releases/download/0.6.0/drush.ph
 # Enable apache vhos
 # Set permissions for site folder
 RUN	chmod +x drush.phar \
-	&& mv drush.phar /usr/local/bin/drush
-	&& ln -s /etc/apache2/sites-available/vhost.conf /etc/apache2/sites-enabled/vhost.conf 
+	&& mv drush.phar /usr/local/bin/drush \
+	&& ln -s /etc/apache2/sites-available/vhost.conf /etc/apache2/sites-enabled/vhost.conf \ 
 	&& chown -R www-data:www-data /var/www/html/ 
 
 WORKDIR /var/www/html
